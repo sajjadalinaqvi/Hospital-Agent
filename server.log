@@ -1,0 +1,131 @@
+nohup: ignoring input
+/usr/local/lib/python3.11/dist-packages/jieba/_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.0)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+ > tts_models/en/ljspeech/tacotron2-DDC is already downloaded.
+ > vocoder_models/en/ljspeech/hifigan_v2 is already downloaded.
+ > Using model: Tacotron2
+ > Setting up Audio Processor...
+ | > sample_rate:22050
+ | > resample:False
+ | > num_mels:80
+ | > log_func:np.log
+ | > min_level_db:-100
+ | > frame_shift_ms:None
+ | > frame_length_ms:None
+ | > ref_level_db:20
+ | > fft_size:1024
+ | > power:1.5
+ | > preemphasis:0.0
+ | > griffin_lim_iters:60
+ | > signal_norm:False
+ | > symmetric_norm:True
+ | > mel_fmin:0
+ | > mel_fmax:8000.0
+ | > pitch_fmin:1.0
+ | > pitch_fmax:640.0
+ | > spec_gain:1.0
+ | > stft_pad_mode:reflect
+ | > max_norm:4.0
+ | > clip_norm:True
+ | > do_trim_silence:True
+ | > trim_db:60
+ | > do_sound_norm:False
+ | > do_amp_to_db_linear:True
+ | > do_amp_to_db_mel:True
+ | > do_rms_norm:False
+ | > db_level:None
+ | > stats_path:None
+ | > base:2.718281828459045
+ | > hop_length:256
+ | > win_length:1024
+ > Model's reduction rate `r` is set to: 1
+ > Vocoder Model: hifigan
+ > Setting up Audio Processor...
+ | > sample_rate:22050
+ | > resample:False
+ | > num_mels:80
+ | > log_func:np.log
+ | > min_level_db:-100
+ | > frame_shift_ms:None
+ | > frame_length_ms:None
+ | > ref_level_db:20
+ | > fft_size:1024
+ | > power:1.5
+ | > preemphasis:0.0
+ | > griffin_lim_iters:60
+ | > signal_norm:False
+ | > symmetric_norm:True
+ | > mel_fmin:0
+ | > mel_fmax:8000.0
+ | > pitch_fmin:1.0
+ | > pitch_fmax:640.0
+ | > spec_gain:1.0
+ | > stft_pad_mode:reflect
+ | > max_norm:4.0
+ | > clip_norm:True
+ | > do_trim_silence:False
+ | > trim_db:60
+ | > do_sound_norm:False
+ | > do_amp_to_db_linear:True
+ | > do_amp_to_db_mel:True
+ | > do_rms_norm:False
+ | > db_level:None
+ | > stats_path:None
+ | > base:2.718281828459045
+ | > hop_length:256
+ | > win_length:1024
+ > Generator Model: hifigan_generator
+ > Discriminator Model: hifigan_discriminator
+Removing weight norm...
+Traceback (most recent call last):
+  File "/home/ubuntu/Clinic-agent/run_server.py", line 12, in <module>
+    from agent import get_response
+  File "/home/ubuntu/Clinic-agent/agent.py", line 7, in <module>
+    from medical_knowledge import search_medical_knowledge
+  File "/home/ubuntu/Clinic-agent/medical_knowledge.py", line 13, in <module>
+    index = pc.Index(os.getenv("PINECONE_INDEX"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/pinecone.py", line 490, in Index
+    index_host = self.db.index._get_host(name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/db_control/resources/sync/index.py", line 245, in _get_host
+    return self._index_host_store.get_host(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/db_control/index_host_store.py", line 47, in get_host
+    description = api.describe_index(index_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/endpoint.py", line 102, in __call__
+    return self.callable(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/core/openapi/db_control/api/manage_indexes_api.py", line 883, in __describe_index
+    return self.call_with_http_info(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/endpoint.py", line 134, in call_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/api_client.py", line 306, in call_api
+    return self.__call_api(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/api_client.py", line 182, in __call_api
+    raise e
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/api_client.py", line 170, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/api_client.py", line 360, in request
+    return self.rest_client.GET(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/rest_utils.py", line 75, in GET
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/rest_urllib3.py", line 267, in request
+    return raise_exceptions_or_return(r)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pinecone/openapi_support/rest_utils.py", line 38, in raise_exceptions_or_return
+    raise UnauthorizedException(http_resp=r)
+pinecone.exceptions.exceptions.UnauthorizedException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'x-pinecone-api-version': '2025-04', 'x-cloud-trace-context': '58ce6547a3453a0b0f31019b49ce3ca8', 'date': 'Tue, 05 Aug 2025 06:58:20 GMT', 'content-type': 'text/html', 'server': 'Google Frontend', 'Content-Length': '15', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'})
+HTTP response body: Invalid API Key
+
