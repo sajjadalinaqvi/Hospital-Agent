@@ -1,4 +1,4 @@
-# Clifton Hospital Voice Assistant
+# Hospital Voice Assistant
 
 A modern, AI-powered voice assistant for Clifton Hospital that provides medical guidance, appointment booking, and emergency referrals. Built with real-time voice processing, barge-in interruption, and a beautiful modern UI.
 
@@ -210,13 +210,11 @@ Clinic-agent/
 - Close other audio applications to avoid conflicts
 - Use headphones to prevent audio feedback
 
-## 📄 License
-This project is developed for Clifton Hospital's internal use.
 
 ## 🤝 Support
 For technical support or medical emergencies:
 - **Emergency**: 911
-- **Hospital**: Clifton Hospital, Street 8, Shah Allah Ditta, Islamabad
+- **Hospital**: Clifton Hospital, Street 8, Islamabad
 - **Technical Issues**: Contact development team
 
 ---
